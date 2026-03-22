@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mūsu galerija — GridNet</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+<!-- HEADER -->
+<header class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6">
+<h1 class="text-2xl font-bold text-yellow-500">⚡ GridNet</h1>
+<a href="index.html" class="text-gray-600 hover:text-black">← Atpakaļ uz sākumu</a>
+</header>
+
+<!-- TITLE -->
+<section class="text-center py-12">
+<h2 class="text-4xl font-bold">Mūsu galerija</h2>
+<p class="text-gray-600 mt-4">Mēs rūpējamies par jūsu tīklu.</p>
+</section>
+
+<!-- HORIZONTAL SCROLL GALLERY -->
+<section class="px-6 pb-20">
+
+<div class="flex space-x-6 overflow-x-auto pb-4" id="gallery">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/1.jpg" alt="Galerijas foto 1">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/2.jpg" alt="Galerijas foto 2">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/3.jpg" alt="Galerijas foto 3">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/4.jpg" alt="Galerijas foto 4">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/5.jpg" alt="Galerijas foto 5">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/6.jpg" alt="Galerijas foto 6">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/7.jpg" alt="Galerijas foto 7">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/8.jpg" alt="Galerijas foto 8">
+
+<img onclick="openPhoto(this)" class="h-72 w-auto object-cover rounded-xl shadow cursor-pointer hover:scale-105 transition shrink-0" src="gallery/9.jpg" alt="Galerijas foto 9">
+
+</div>
+
+</section>
+
+<!-- LIGHTBOX VIEWER -->
+<div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50" onclick="closePhoto()">
+<img id="lightboxImg" class="max-h-[90%] max-w-[90%] rounded-xl shadow-2xl" alt="">
+</div>
+
+<!-- FOOTER -->
+<footer class="border-t py-8 text-center text-gray-500 text-sm">
+© 2026 GridNet enerģijas sistēmas
+</footer>
+
+<script>
+function openPhoto(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt || '';
+  lightbox.classList.remove('hidden');
+}
+
+function closePhoto() {
+  document.getElementById('lightbox').classList.add('hidden');
+}
+</script>
+
+</body>
+</html>
